@@ -1,10 +1,10 @@
 import React from 'react';
-import Display from './components/Display';
+import Students from './components/Students';
 
 const App = () => {
   return (
     <>
-      <Display />
+      <Students />
     </>
   )
 }

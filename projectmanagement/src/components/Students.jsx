@@ -1,8 +1,5 @@
 import { useEffect, useState } from "react";
 import client from '../client';
-import "./Display.css"
-// import fetch from 'node-fetch';
-
 
 const Display = () => {
     const [users, setUsers] = useState([]);
@@ -28,13 +25,13 @@ const Display = () => {
     }, []);
 
     return (
-        <div className="cards">
+        <>
             {users.map((user) => (
                 <div key={user._id} className="card-container">
                     <h2 className="username">{user.name}</h2>
                     <p className="useremail">{user.email}</p>
                     {/* <p>Created At: {user.createdAt}</p>
-                    <p>Updated At: {user.updatedAt}</p> */}
+        <p>Updated At: {user.updatedAt}</p> */}
                     <h3 className="projectTitle">Projects:</h3>
                     {user.projects.map((project) => (
                         <div key={project._key} className="projects">
@@ -49,8 +46,10 @@ const Display = () => {
                     ))}
                 </div>
             ))}
-        </div>
+
+        </>
     );
 };
 
 export default Display;
+
