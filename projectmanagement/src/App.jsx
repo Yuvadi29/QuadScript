@@ -1,26 +1,35 @@
-import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';  
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar_Stu from './components/NavBar_Stu';
-import Students from './components/Students';
-import Landing from './components/Landing';
-import College from './components/College';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'
+import Navbar_Stu from './Components/Navbar_Stu'
+import Landing from './Components/Landing';
+import Department from './Components/Department';
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from 'react-router-dom'
+import College from './Components/College';
+import StudentInfo from './Components/StudentInfo';
 
-const App = () => {
+function App() {
+ 
+
   return (
-    <>
+    <div>
       <Router>
-        <NavBar_Stu />
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path='/college' element={<College />} />
-          <Route path="/students" element={<Students />} />
+      <Navbar_Stu />
+      <Routes>
           
+          <Route path='/' element= { <Landing /> } />
+          {/* <Route path='/' element= { <Dashboard /> } /> */}
+          <Route path='/college' element= { <College /> } />
+          <Route path='/department' element= { <Department /> } />
+          <Route path='/StudentInfo' element= { <StudentInfo /> } />
+          {/* <Route path='/login' element= { <Login /> } /> */}
         </Routes>
       </Router>
-
-    </>
+    </div>
   )
 }
 
-export default App;
+export default App

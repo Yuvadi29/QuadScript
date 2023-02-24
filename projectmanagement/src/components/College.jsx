@@ -9,11 +9,10 @@ import mech from '../assets/mech.jpg'
 
 
 
-
 export default function College() {
     return (
         <div className='college'>
-            <Link to='/college'>
+            {/* <Link to='/college'> */}
                 <h1>College</h1>
 
                 <div className='college-cards'>
@@ -33,8 +32,10 @@ export default function College() {
                                 <Card.Img variant="top" src={it} />
                                 <Card.Body>
                                     <Card.Title>Information Technology</Card.Title>
-
+                                    
+                                    <Link href="/students"> 
                                     <Button variant="primary">Go somewhere</Button>
+                                    </Link>
                                 </Card.Body>
                             </Card>
                         </div>
@@ -86,7 +87,7 @@ export default function College() {
                 </div>
 
 
-            </Link>
+            {/* </Link> */}
         </div>
     )
 }

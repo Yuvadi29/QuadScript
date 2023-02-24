@@ -1,0 +1,5 @@
+.imge img {
+    /* height: parent; */
+    height: 20rem;
+    object-fit: cover;
+} 
