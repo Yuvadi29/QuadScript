@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import client from '../client';
+import "./Display.css"
 // import fetch from 'node-fetch';
 
 
@@ -27,23 +28,23 @@ const Display = () => {
     }, []);
 
     return (
-        <div>
+        <div className="cards">
             {users.map((user) => (
-                <div key={user._id}>
-                    <h2>{user.name}</h2>
-                    <p>{user.email}</p>
-                    <p>Created At: {user.createdAt}</p>
-                    <p>Updated At: {user.updatedAt}</p>
-                    <h3>Projects:</h3>
+                <div key={user._id} className="card-container">
+                    <h2 className="username">{user.name}</h2>
+                    <p className="useremail">{user.email}</p>
+                    {/* <p>Created At: {user.createdAt}</p>
+                    <p>Updated At: {user.updatedAt}</p> */}
+                    <h3 className="projectTitle">Projects:</h3>
                     {user.projects.map((project) => (
-                        <div key={project._key}>
-                            <h4>{project.projectName}</h4>
-                            <p>Year: {project.year}</p>
-                            <p>Department: {project.department}</p>
-                            <p><a href={project.githubLink}>GitHub Link</a></p>
-                            <p><a href={project.projectLink}>Project Link</a></p>
-                            <p>{project.projectDescription}</p>
-                            <img src={project.imageUrl} alt={project.projectName} />
+                        <div key={project._key} className="projects">
+                            <h4 className="projectName">{project.projectName}</h4>
+                            <p className="year">Year: {project.year}</p>
+                            <p className="department">Department: {project.department}</p>
+                            <p className="github"><a href={project.githubLink}>GitHub Link</a></p>
+                            <p className="projectLink"><a href={project.projectLink}>Project Link</a></p>
+                            <p className="Desc">{project.projectDescription}</p>
+                            <img src={project.imageUrl} alt={project.projectName} className="projectImage" />
                         </div>
                     ))}
                 </div>
